@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 960066d87b4f3fb40bcb327337d7f9c1, type: 3}
+  m_Name: _D_Container_PlayerBull
+  m_EditorClassIdentifier: 
+  dataName: Bull
+  baseData:
+  - {fileID: 11400000, guid: 1a2d584c9b6ef5240bb835ae768076f3, type: 2}
+  - {fileID: 11400000, guid: ae96a8fb0e044034aad178be385cb4ef, type: 2}
+  - {fileID: 11400000, guid: f3b77862be256654faee6aaa968422bf, type: 2}
+  triggerBases: []
+  triggerEditorBases:
+  - {fileID: 11400000, guid: 3df4a237f811dc6419182d537a667b8a, type: 2}
+  refContainer:
+    dataType: 0
+    pathType: 0
+    dataPath: 
+    replicateType: 0
+    isSaveOnValueChanged: 0
+    broadcastEvent: 0
+    message: 

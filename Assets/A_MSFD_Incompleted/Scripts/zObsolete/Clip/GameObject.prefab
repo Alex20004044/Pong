@@ -1,0 +1,180 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6154406856632728971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6154406856632728969}
+  - component: {fileID: 6154406856632728968}
+  - component: {fileID: 6154406856632728975}
+  - component: {fileID: 6154406856632728974}
+  - component: {fileID: 6154406856632728972}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6154406856632728969
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154406856632728971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6154406856632728968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154406856632728971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5358c3f4df834c4e943fe89f9cabf47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip:
+    maxCapacity: 1
+    shootCost:
+      value: 0.3
+    reloadPerSec:
+      value: 22222
+    delayBetweenShoot: 12
+    __charge: 1
+    capacityProgressBar: 0
+    __remainingTimeBeforeShoot: 0
+    isCanShootWhenClipIsEmpty: 0
+    isReloadWhenCantShoot: 0
+    delayBetweenShootsWhenEmpty: 12
+    dischargeTime: 24
+    onEmpty:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6154406856632728971}
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 6154406856632728974}
+          m_MethodName: LogCurrentTimeMessage
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Stop Shooting
+            m_BoolArgument: 0
+          m_CallState: 2
+    onFull:
+      m_PersistentCalls:
+        m_Calls: []
+    onShoot:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 6154406856632728974}
+          m_MethodName: LogCurrentTimeMessage
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Shoot
+            m_BoolArgument: 0
+          m_CallState: 2
+    onIncreaseEnergy:
+      m_PersistentCalls:
+        m_Calls: []
+    onDecreaseEnergy:
+      m_PersistentCalls:
+        m_Calls: []
+    clipUpdateRate: 0.01
+    clipUpdateRateMode: 1
+--- !u!114 &6154406856632728975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154406856632728971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c95b41eeb88aa44ac47d1b997bea03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6154406856632728968}
+        m_MethodName: Shoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  delayBeforeStart: -1
+  repeatRate: 0.01
+  activationType: 0
+--- !u!114 &6154406856632728974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154406856632728971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 568ea6b92f36e15489931473cbfb0fcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  logType: 0
+--- !u!114 &6154406856632728972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6154406856632728971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46bfb8f16ed36254899f510826819948, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6154406856632728974}
+        m_MethodName: LogCurrentTimeMessage
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Start shooting
+          m_BoolArgument: 0
+        m_CallState: 2

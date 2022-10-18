@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 960066d87b4f3fb40bcb327337d7f9c1, type: 3}
+  m_Name: _D_Container_Template_Player
+  m_EditorClassIdentifier: 
+  dataName: PlayerTemplate
+  baseData:
+  - {fileID: 11400000, guid: 8663a23779ca03d4783f5660975ba0ab, type: 2}
+  - {fileID: 11400000, guid: 7dc8e264774c0d346a5774cad8ffca0c, type: 2}
+  - {fileID: 11400000, guid: 17f9ca7b53efa994d9cd0d9d52ae1039, type: 2}
+  - {fileID: 11400000, guid: a4aba5dd810546a4a91f51d2d231b51e, type: 2}
+  triggerBases: []
+  triggerEditorBases: []
+  refContainer:
+    dataType: 1
+    pathType: 0
+    dataPath: 
+    replicateType: 0
+    isSaveOnValueChanged: 0
+    broadcastEvent: 0
+    message: 

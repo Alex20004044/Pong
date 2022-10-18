@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3961d4b60dd4942b422bff602f6b40, type: 3}
+  m_Name: DO_Container_MAIN 50 percent
+  m_EditorClassIdentifier: 
+  dataName: MAIN
+  baseData:
+  - {fileID: 11400000, guid: c3971c2c593122a41b1ee4727f3602bb, type: 2}
+  - {fileID: 11400000, guid: d9989b0e01ca1a7408b43bb1667acd9e, type: 2}
+  - {fileID: 11400000, guid: e0efaa6b38a5cee4fbb1e08f5ccbc6c9, type: 2}
