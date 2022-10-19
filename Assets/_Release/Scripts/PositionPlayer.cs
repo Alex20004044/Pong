@@ -6,14 +6,20 @@ using UnityEngine;
 public class PositionPlayer : NetworkBehaviour
 {
     [SerializeField]
+    Vector3[] playerPositions = new Vector3[2];
+
+/*    [SerializeField]
     Vector3 firstPlayerPos = new Vector3(0, -5, 0);    
     [SerializeField]
-    Vector3 secondPlayerPos = new Vector3(0, 5, 0);
+    Vector3 secondPlayerPos = new Vector3(0, 5, 0);*/
 
     public override void OnNetworkSpawn()
     {
         base.OnNetworkSpawn();
-        if (IsHost)
+        if (IsOwner)
+            transform.position = playerPositions[NetworkManager.Singleton.LocalClientId];
+
+        /*if (IsHost)
         {
             transform.position = firstPlayerPos;
         }
@@ -22,6 +28,6 @@ public class PositionPlayer : NetworkBehaviour
             transform.position = secondPlayerPos;
         }
         else
-            Debug.LogError("Non client or host");
+            Debug.LogError("Non client or host");*/
     }
 }

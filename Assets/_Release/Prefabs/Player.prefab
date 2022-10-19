@@ -96,6 +96,8 @@ GameObject:
   - component: {fileID: -2965589330502766622}
   - component: {fileID: 8855577276205875822}
   - component: {fileID: 359772294454915748}
+  - component: {fileID: 8711485688171234217}
+  - component: {fileID: 4656561149704177530}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -147,8 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da1133cda88c6e542aea5db64a63640b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstPlayerPos: {x: 0, y: -4.8, z: 0}
-  secondPlayerPos: {x: 0, y: 4.8, z: 0}
+  playerPositions:
+  - {x: 0, y: -4.8, z: 0}
+  - {x: 0, y: 4.8, z: 0}
 --- !u!114 &359772294454915748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,3 +178,35 @@ MonoBehaviour:
   ScaleThreshold: 0.01
   InLocalSpace: 0
   Interpolate: 1
+--- !u!114 &8711485688171234217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9222678986720772443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9153585f51dac47498e79ffe534d2914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceleration: 1
+  maxSpeed: 10
+  moveTreshold: 0.1
+  axis: {x: 1, y: 0, z: 0}
+  moveBounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 5, y: 5, z: 0}
+--- !u!114 &4656561149704177530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9222678986720772443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed2f997251356140892a39adba1d060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axisName: Horizontal

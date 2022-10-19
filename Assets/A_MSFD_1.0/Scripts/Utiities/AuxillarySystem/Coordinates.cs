@@ -8,6 +8,22 @@ namespace MSFD.AS
 {
     public static class Coordinates
     {
+
+        //ATTENTION MOVE TO MSFD!
+        #region Bounds
+        public static Vector3 Clamp(Vector3 value, Bounds bounds)
+        {
+            if(!bounds.Contains(value))
+            {
+                value = new Vector3(
+                    Mathf.Clamp(value.x, bounds.min.x, bounds.max.x),
+                    Mathf.Clamp(value.y, bounds.min.y, bounds.max.y),
+                    Mathf.Clamp(value.z, bounds.min.z, bounds.max.z)
+                    );
+            }
+            return value;
+        }
+
         public static Bounds TotalBounds(Vector3[] points)
         {
             Bounds totalBounds = new Bounds(points[0], Vector3.zero);
@@ -43,6 +59,7 @@ namespace MSFD.AS
             }*/
             return totalBounds;
         }
+        #endregion
         #region FindNearestPoint
         public static Vector3 FindRemotestPoint(Vector3 basePoint, Vector3[] points)
         {
