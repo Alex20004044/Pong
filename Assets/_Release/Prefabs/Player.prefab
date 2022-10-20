@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9153585f51dac47498e79ffe534d2914, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 1
+  acceleration: 10
   maxSpeed: 10
   moveTreshold: 0.1
   axis: {x: 1, y: 0, z: 0}

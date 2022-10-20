@@ -50,7 +50,7 @@ namespace Pong
             }
             else
             {
-                speed += acceleration * desiredDirection;
+                speed += acceleration * desiredDirection * Time.fixedDeltaTime;
                 speed = Math.Clamp(speed, -maxSpeed, maxSpeed);
                 
                 transform.position = MSFD.AS.Coordinates.Clamp(transform.position + axis * speed * Time.fixedDeltaTime, moveBounds);
