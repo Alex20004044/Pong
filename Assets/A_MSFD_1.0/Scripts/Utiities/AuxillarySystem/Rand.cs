@@ -80,42 +80,28 @@ namespace MSFD.AS
         {
             if(elementsCount < 1)
             {
-                Debug.LogError("Incorrect elemets count");
+                throw new System.ArgumentOutOfRangeException("Incorrect elements count");
             }
             return UnityEngine.Random.Range(0, elementsCount);
         }
         #endregion
 
         #region Range
-        public static int RandomPoint(this IDeltaRange<int> range)
-        {
-            return RandomPointInRange(range);
-        }
-        public static int RandomPointInRange(IDeltaRange<int> range)
-        {
-            return Random.Range(range.MinBorder, range.MaxBorder);
-        }
-        public static int RandomPoint(this Vector2Int range)
-        {
-            return RandomPointInRange(range);
-        }
-        public static int RandomPointInRange(Vector2Int range)
+        /// <summary>
+        /// range.x - inclusive, range.y - exclusive
+        /// </summary>
+        /// <param name="range"></param>
+        /// <returns></returns>
+        public static int RandomPointInRange(this Vector2Int range)
         {
             return Random.Range(range.x, range.y);
         }
-        public static float RandomPoint(this IDeltaRange<float> range)
-        {
-            return RandomPointInRange(range);
-        }
-        public static float RandomPointInRange(IDeltaRange<float> range)
-        {
-            return Random.Range(range.MinBorder, range.MaxBorder);
-        }
-        public static float RandomPoint(this Vector2 range)
-        {
-            return RandomPointInRange(range);
-        }
-        public static float RandomPointInRange(Vector2 range)
+        /// <summary>
+        /// range.x - inclusive, range.y - inclusive
+        /// </summary>
+        /// <param name="range"></param>
+        /// <returns></returns>
+        public static float RandomPointInRange(this Vector2 range)
         {
             return Random.Range(range.x, range.y);
         }
@@ -139,9 +125,17 @@ namespace MSFD.AS
         {
             return center + UnityEngine.Random.insideUnitSphere * radius;
         }
+        public static Quaternion RandomRotationXAxis()
+        {
+            return Quaternion.AngleAxis(UnityEngine.Random.Range(0f, 360f), Vector3.right);
+        }
         public static Quaternion RandomRotationYAxis()
         {
             return Quaternion.AngleAxis(UnityEngine.Random.Range(0f, 360f), Vector3.up);
+        }        
+        public static Quaternion RandomRotationZAxis()
+        {
+            return Quaternion.AngleAxis(UnityEngine.Random.Range(0f, 360f), Vector3.forward);
         }
 
         #endregion

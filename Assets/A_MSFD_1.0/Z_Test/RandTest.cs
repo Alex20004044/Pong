@@ -15,8 +15,6 @@ public class RandTest : MonoBehaviour
     {
         Vector2 vector2 = new Vector2();
         Rand.RandomPointInRange(vector2);
-        IDeltaRange<float> deltaRangeValue = new DeltaRange();
-        deltaRangeValue.RandomPoint();
 
     }
 

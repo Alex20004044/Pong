@@ -96,8 +96,11 @@ GameObject:
   - component: {fileID: -2965589330502766622}
   - component: {fileID: 8855577276205875822}
   - component: {fileID: 359772294454915748}
-  - component: {fileID: 8711485688171234217}
-  - component: {fileID: 4656561149704177530}
+  - component: {fileID: 731262807755934362}
+  - component: {fileID: 197943749084376123}
+  - component: {fileID: 3974098075316154494}
+  - component: {fileID: 5004737414232585559}
+  - component: {fileID: 3373860301392890599}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -178,7 +181,7 @@ MonoBehaviour:
   ScaleThreshold: 0.01
   InLocalSpace: 0
   Interpolate: 1
---- !u!114 &8711485688171234217
+--- !u!114 &731262807755934362
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,17 +190,57 @@ MonoBehaviour:
   m_GameObject: {fileID: 9222678986720772443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9153585f51dac47498e79ffe534d2914, type: 3}
+  m_Script: {fileID: 11500000, guid: 722ed129f91a88a4aaf53d5ba29a0a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceleration: 10
+  width: 1
+  height: 0.2
+--- !u!114 &197943749084376123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9222678986720772443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478ffc70e340eb74d90bdae44cee2924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  workMode: 0
+--- !u!114 &3974098075316154494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9222678986720772443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5b4dadf668f2d43bfb5160c6edc678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5004737414232585559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9222678986720772443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06bf4b0a1d53ab141a9775b610309b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceleration: 30
   maxSpeed: 10
   moveTreshold: 0.1
   axis: {x: 1, y: 0, z: 0}
+  isRestrictMovemenetInBounds: 0
   moveBounds:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 5, y: 5, z: 0}
---- !u!114 &4656561149704177530
+    m_Extent: {x: Infinity, y: Infinity, z: Infinity}
+--- !u!114 &3373860301392890599
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,7 +249,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 9222678986720772443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ed2f997251356140892a39adba1d060, type: 3}
+  m_Script: {fileID: 11500000, guid: ce976bb0bb6d7c0459ee3515da9acc53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axisName: Horizontal
+  bumper:
+    objRef: {fileID: 731262807755934362}
+  workMode: 1

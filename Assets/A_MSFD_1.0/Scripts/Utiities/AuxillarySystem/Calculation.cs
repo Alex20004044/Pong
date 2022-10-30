@@ -5,10 +5,7 @@ namespace MSFD.AS
 {
     public static class Calculation
     {
-        public static float Map(IDeltaRange<float> value, Vector2 outputRange)
-        {
-            return Map(value.Value, value.MinBorder, value.MaxBorder, outputRange.x, outputRange.y);
-        }
+
         /// <summary>
         /// Transform value from range [inputRange.x:inputRange.y] to range [outputRange.x:outputRange.y]
         /// </summary>

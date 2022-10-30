@@ -29,7 +29,7 @@ namespace CorD.ColibriMenuManager
 
         private void Start()
         {
-            var windowsArray = GetComponentsInChildren<Window>();
+            var windowsArray = GetComponentsInChildren<Window>(includeInactive: true);
 
             foreach(var x in windowsArray)
             {
