@@ -20,8 +20,5 @@ namespace Pong
         public const string I_ROUND_STARTED = "I_ROUND_STARTED";
         public const string I_BALL_IN_TOP_GATE = "I_BALL_IN_TOP_GATE";
         public const string I_BALL_IN_DOWN_GATE = "I_BALL_IN_DOWN_GATE";
-
-
-
     }
 }

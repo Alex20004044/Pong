@@ -57,7 +57,7 @@ namespace Pong
                 delta.Normalize();
 
                 delta = delta * moveBodyBounds.extents.magnitude;
-                moveBodyBounds.Encapsulate(moveBody.transform.position + delta);
+                moveBodyBounds.Encapsulate(moveBody.transform.position);// + delta);
                 ///
                 //moveBodyBounds.Encapsulate(position);
                 if (!moveBodyBounds.Intersects(bBounds)) continue;

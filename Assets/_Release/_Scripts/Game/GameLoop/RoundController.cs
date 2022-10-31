@@ -33,7 +33,7 @@ namespace Pong
             //sapwnBall
             ball = Instantiate(ballPrefab, ballSpawnPoint.position, ballSpawnPoint.rotation);
             ballNetworkObject = ball.GetComponent<NetworkObject>();
-            ballNetworkObject.Spawn();
+            ballNetworkObject.Spawn(true);
 
             //wait//ActivateBall
             StartCoroutine(WaitAndActivateBall());

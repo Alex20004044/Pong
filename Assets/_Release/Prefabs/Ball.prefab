@@ -14,12 +14,12 @@ GameObject:
   - component: {fileID: 3365243908872101836}
   - component: {fileID: -1607954753984678197}
   - component: {fileID: 2515391831915963231}
-  - component: {fileID: 4152347276213835647}
   - component: {fileID: 8181491361509650551}
-  - component: {fileID: 6753332704776566890}
+  - component: {fileID: -4192016537256121677}
+  - component: {fileID: -4594786264200664834}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Player
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,28 +120,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f44083c0044e07a4098895f7179872aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 40
-  acceleration: 0.5
-  speed: 1
---- !u!114 &4152347276213835647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2769861934973227684}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d67aa551f0e811345a33ce240d0a6de7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 40
-  acceleration: 0.1
-  speed: 5
-  maxHorCoord: 5
-  minHorCoord: -5
-  maxVertCoord: 6.5
-  minVertCoord: -6.5
+  maxSpeed: 25
+  acceleration: 0
+  speed:
+    baseValue: 5
 --- !u!114 &8181491361509650551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,34 +136,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f0ba6e2661eea49a8bfb98178ad3de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6753332704776566890
+--- !u!114 &-4192016537256121677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2769861934973227684}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba080c3d9745b1e498601ca6b33777d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 75cab5eb0b64a944d8e4211237351516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8181491361509650551}
-        m_TargetAssemblyTypeName: Pong.SimultaneousBallActivator, Assembly-CSharp
-        m_MethodName: ActivateSyncedEvent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  activationCondition: 2
+  startedAbilitiesPrefabs: []
+--- !u!114 &-4594786264200664834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2769861934973227684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38a01ca89349f4458cce52e08b1d83f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Player
 --- !u!1 &2769861935211936903
 GameObject:
   m_ObjectHideFlags: 0

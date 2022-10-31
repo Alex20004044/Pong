@@ -22,7 +22,7 @@ namespace Pong
         void OnBump(BumpInfo bumpInfo)
         {
             GameObject go= bumpInfo.contactedBumper.gameObject;
-            if (go.tag != GameValues.playerTag) return;
+            if (go.tag != GameValuesPong.ballTag) return;
 
             if(workMode == WorkMode.reflectHorizontal)
                 go.GetComponent<BallMovementSolidBody>().ReflectHorizontalDirection();

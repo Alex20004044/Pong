@@ -101,9 +101,10 @@ GameObject:
   - component: {fileID: 3974098075316154494}
   - component: {fileID: 5004737414232585559}
   - component: {fileID: 3373860301392890599}
+  - component: {fileID: 5600590741676586485}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -255,3 +256,15 @@ MonoBehaviour:
   bumper:
     objRef: {fileID: 731262807755934362}
   workMode: 1
+--- !u!114 &5600590741676586485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9222678986720772443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1f7bfe2a8e2bb428323afd571db219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

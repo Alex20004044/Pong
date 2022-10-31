@@ -1,19 +1,21 @@
 using MSFD;
 using System.Collections;
 using System.Collections.Generic;
+using UniRx;
 using Unity.Netcode;
 using UnityEngine;
 
 namespace Pong
 {
-    public class BallMovementSolidBody : MonoBehaviour, IVector2Settable
+    public class BallMovementSolidBody : MonoBehaviour, IVector2Settable, IBallUpgradable
     {
         [SerializeField]
         float maxSpeed = 40;
         [SerializeField]
         float acceleration = 0.5f;
         [SerializeField]
-        float speed = 10;
+        ModField<float> speed = new ModField<float>(10);
+
         Vector2 moveDirection;
 
         bool isActivated = false;
@@ -22,6 +24,13 @@ namespace Pong
         private void Awake()
         {
             solidBody = GetComponent<SolidBody2D>();
+
+            speed.AddMod((x) =>
+            {
+                if (x >= maxSpeed)
+                    x = maxSpeed;
+                return x;
+            }, -100).AddTo(this);
         }
         public void SetDirection(Vector2 direction)
         {
@@ -34,10 +43,9 @@ namespace Pong
 
             Vector2 displacement = speed * moveDirection * Time.fixedDeltaTime;
 
-            speed += acceleration * Time.fixedDeltaTime;
-            if (speed >= maxSpeed)
-                speed = maxSpeed;
-            
+            if(speed.BaseValue <= maxSpeed)
+                speed.BaseValue += acceleration * Time.fixedDeltaTime;
+
             //Check is collide with player
             solidBody.Move(transform.position + MSFD.AS.Coordinates.ConvertVector2ToVector3(displacement, convertMode: MSFD.AS.Coordinates.ConvertV2ToV3Mode.y_to_y));
         }
@@ -49,6 +57,11 @@ namespace Pong
         public void ReflectVerticalDirection()
         {
             moveDirection.y = -moveDirection.y;
+        }
+
+        public IModifiable<float> GetSpeedModifiable()
+        {
+            return speed;
         }
     }
 }
