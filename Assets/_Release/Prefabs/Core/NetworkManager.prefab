@@ -51,7 +51,7 @@ MonoBehaviour:
   NetworkConfig:
     ProtocolVersion: 0
     NetworkTransport: {fileID: 6645370368065400092}
-    PlayerPrefab: {fileID: 5977234254896086157, guid: c865897c4f752194aa827864a76c6465, type: 3}
+    PlayerPrefab: {fileID: 9222678986720772443, guid: 4eee3ee96ce1707458f5f93232fc0db2, type: 3}
     NetworkPrefabs:
     - Override: 0
       Prefab: {fileID: 9222678986720772443, guid: 4eee3ee96ce1707458f5f93232fc0db2, type: 3}
@@ -63,11 +63,6 @@ MonoBehaviour:
       SourcePrefabToOverride: {fileID: 0}
       SourceHashToOverride: 0
       OverridingTargetPrefab: {fileID: 0}
-    - Override: 0
-      Prefab: {fileID: 5977234254896086157, guid: c865897c4f752194aa827864a76c6465, type: 3}
-      SourcePrefabToOverride: {fileID: 0}
-      SourceHashToOverride: 0
-      OverridingTargetPrefab: {fileID: 0}
     TickRate: 30
     ClientConnectionBufferTimeout: 10
     ConnectionApproval: 0
@@ -76,7 +71,7 @@ MonoBehaviour:
     TimeResyncInterval: 30
     EnsureNetworkVariableLengthSafety: 0
     EnableSceneManagement: 1
-    ForceSamePrefabs: 1
+    ForceSamePrefabs: 0
     RecycleNetworkIds: 1
     NetworkIdRecycleDelay: 120
     RpcHashSize: 0
