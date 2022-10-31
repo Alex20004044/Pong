@@ -3,31 +3,18 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-public class PositionPlayer : NetworkBehaviour
+namespace Pong
 {
-    [SerializeField]
-    Vector3[] playerPositions = new Vector3[2];
-
-/*    [SerializeField]
-    Vector3 firstPlayerPos = new Vector3(0, -5, 0);    
-    [SerializeField]
-    Vector3 secondPlayerPos = new Vector3(0, 5, 0);*/
-
-    public override void OnNetworkSpawn()
+    public class PositionPlayer : NetworkBehaviour
     {
-        base.OnNetworkSpawn();
-        if (IsOwner)
-            transform.position = playerPositions[NetworkManager.Singleton.LocalClientId];
+        [SerializeField]
+        Vector3[] playerPositions = new Vector3[2];
 
-        /*if (IsHost)
+        public override void OnNetworkSpawn()
         {
-            transform.position = firstPlayerPos;
+            base.OnNetworkSpawn();
+            if (IsOwner)
+                transform.position = playerPositions[NetworkManager.Singleton.LocalClientId];
         }
-        else if (IsClient)
-        {
-            transform.position = secondPlayerPos;
-        }
-        else
-            Debug.LogError("Non client or host");*/
     }
 }
