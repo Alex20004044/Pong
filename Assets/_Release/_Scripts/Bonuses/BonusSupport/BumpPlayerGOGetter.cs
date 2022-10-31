@@ -24,7 +24,6 @@ namespace Pong
         }
         void Init()
         {
-            bumpedGos = GameObject.FindGameObjectsWithTag(GameValues.playerTag);
             GetComponent<BumperBase>().Subscribe(OnBump).AddTo(this);
         }
 

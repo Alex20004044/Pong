@@ -22,6 +22,7 @@ namespace Pong
         [SerializeField]
         float delayAfterRoundEnd = 1f;
 
+
         [SerializeField]
         DelayBeforeMatchController delayBeforeMatchController;
 
@@ -29,6 +30,8 @@ namespace Pong
         RoundController roundController;
         [SerializeField]
         ScoreController scoreController;
+        [SerializeField]
+        AfterMatchController afterMatchController;
 
         public override void OnNetworkSpawn()
         {
@@ -60,7 +63,7 @@ namespace Pong
         void OnRoundEnd(PlayerEnum wonPlayer)
         {
             scoreController.AddScore(wonPlayer);
-            StartCoroutine(OnRoundEndCoroutine(wonPlayer));       
+            StartCoroutine(OnRoundEndCoroutine(wonPlayer));
         }
         IEnumerator OnRoundEndCoroutine(PlayerEnum wonPlayer)
         {
@@ -68,18 +71,22 @@ namespace Pong
             //Start new round or end game
             if (scoreController.GetScore(wonPlayer) >= scoresForWin)
             {
-                EndGame();
+                EndGame(wonPlayer);
             }
-            else 
+            else
                 roundController.StartRound(OnRoundEnd);
         }
 
         [Button]
-        public void EndGame()
+        public void EndGame(PlayerEnum wonPlayer)
         {
             Messenger.Broadcast(GameEvents.I_GAME_ENDED, MessengerMode.DONT_REQUIRE_LISTENER);
+            afterMatchController.EndGame(wonPlayer);
+
             Debug.Log("end game");
         }
-        enum GameState { waitingForPlayers, delayBeforeStart, playRound, endGame};
+
+
+        enum GameState { waitingForPlayers, delayBeforeStart, playRound, endGame };
     }
 }

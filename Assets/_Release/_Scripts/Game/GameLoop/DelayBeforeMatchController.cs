@@ -38,7 +38,7 @@ namespace Pong
         }
 
         [ClientRpc]
-        void InformClientsClientRPC(string message)
+        public void InformClientsClientRPC(string message)
         {
             Messenger<string>.Broadcast(GameEventsPong.R_string_DISPLAY_MESSAGE, message, MessengerMode.DONT_REQUIRE_LISTENER);
         }

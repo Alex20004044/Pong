@@ -19,9 +19,15 @@ namespace Pong
         {
             GameObject[] bumpsStack = unit.GetComponent<IBumpGOGetter>().GetBumpGos();
             if (targetBumpGoIndex < bumpsStack.Length)
-                disposable = bumpsStack[targetBumpGoIndex].GetComponent<ISizeChangable>().GetSizeModifiable().AddMod(SizeMod);
-            else
-                Debug.Log("Bonus is not activated due to unfilled bumb GOs array");
+            {
+                var go = bumpsStack[targetBumpGoIndex];
+                if (go != null)
+                {
+                    disposable = go.GetComponent<ISizeChangable>().GetSizeModifiable().AddMod(SizeMod);
+                    return;
+                }
+            }
+            Debug.Log("Bonus is not activated due to unfilled bumb GOs array");
         }
 
         float SizeMod(float x)
@@ -32,7 +38,7 @@ namespace Pong
 
         protected override void DeactivateBonus()
         {
-            disposable.Dispose();
+            disposable?.Dispose();
         }
     }
 }

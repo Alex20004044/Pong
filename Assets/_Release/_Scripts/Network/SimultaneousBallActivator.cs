@@ -1,23 +1,39 @@
+using MSFD.AS;
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Pong
 {
     public class SimultaneousBallActivator : NetworkBehaviour
     {
-        [SerializeField]
-        IVector2Settable ballMovement;
 
+        [SerializeField]
+        float minYComponent = 0.3f;
+
+        Vector2 GetMoveDirection()
+        {
+            float x = Random.Range(0f, 1f);
+            float y = Random.Range(minYComponent, 1f);
+
+            int[] sings = { -1, 1 };
+
+            x *= sings[Rand.GetRandomIndex(sings.Length)];
+            y *= sings[Rand.GetRandomIndex(sings.Length)];
+
+            Debug.Log("Rand Index (0,1): " + Rand.GetRandomIndex(sings.Length));
+            return new Vector2(x, y).normalized;
+        }
 
         [Button]
         public void ActivateSyncedEvent()
         {
             if (IsServer)
             {
-                Vector2 moveDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)).normalized;
+                Vector2 moveDirection = GetMoveDirection();
                 float deltaTime = (NetworkManager.Singleton.LocalTime - NetworkManager.Singleton.ServerTime).TimeAsFloat;
                 Debug.Log("Delta between host and client: " + deltaTime);
 

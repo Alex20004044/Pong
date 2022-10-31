@@ -11,32 +11,27 @@ namespace Pong
         [SerializeField]
         GoalRegistrator goalRegistrator;
         [SerializeField]
-        float deltaRegistrationFromYBorder = 0.5f;
-        float mapHeight;
+        float deltaFromYBorderForRegistration = 0.5f;
 
+        float mapBorder;
         Transform ball;
         private void Awake()
         {
             Messenger.Subscribe(GameEventsPong.I_ROUND_STARTED, OnRoundStarted).AddTo(this);
         }
-        private void Start()
-        {
-            //Attention!
-            mapHeight = FindObjectOfType<SceneController>().GetYAxisMaxCoord().y - deltaRegistrationFromYBorder;
-        }
         //TEST!!!
         void OnRoundStarted()
         {
-            ball = FindObjectOfType<BallMovement>().transform;
+            mapBorder = FindObjectOfType<SceneController>().GetYAxisMaxCoord().y - deltaFromYBorderForRegistration;
+            ball = GameObject.FindGameObjectWithTag(GameValuesPong.ballTag).transform;
         }
         private void FixedUpdate()
         {
             if (ball == null) return;
-            if (ball.position.y > mapHeight)
+            if (ball.position.y > mapBorder)
                 BallInTopGate();
-            if (ball.position.y < -mapHeight)
+            if (ball.position.y < -mapBorder)
                 BallInDownGate();
-
         }
 
         void BallInTopGate()

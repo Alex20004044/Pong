@@ -1,6 +1,8 @@
+using MSFD;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UniRx;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
@@ -15,15 +17,24 @@ namespace Pong
         [SerializeField]
         TMP_Text text;
 
+        private void Awake()
+        {
+            Messenger.Subscribe(GameEvents.I_GAME_AWAKED, OnGameAwaked).AddTo(this);
+        }
 
         public override void OnNetworkSpawn()
         {
             if (IsHost)
                 text.text = ipInfoTextPrefix + GetConnectionInfo();
             else
-                enabled = false;
+                gameObject.SetActive(false);
 
         }
+        void OnGameAwaked()
+        {
+            gameObject.SetActive(false);
+        }
+
 
         string GetConnectionInfo()
         {
