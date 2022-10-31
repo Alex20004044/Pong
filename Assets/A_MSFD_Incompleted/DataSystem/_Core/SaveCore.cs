@@ -111,6 +111,7 @@ namespace MSFD
 #if UNITY_IOS
              return Application.persistentDataPath + "/Data" + "/";
 #endif
+            return Application.dataPath + "/Data" + "/";
         }
     }
 }
